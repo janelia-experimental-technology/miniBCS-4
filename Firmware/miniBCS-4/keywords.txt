@@ -1,0 +1,19 @@
+driverOn		KEYWORD2
+driverOff		KEYWORD2
+getDriver		KEYWORD2
+getVersion		KEYWORD2
+setToneGain		KEYWORD2
+toneReset		KEYWORD2
+setTone			KEYWORD2
+toneOn			KEYWORD2
+toneOff			KEYWORD2
+getToneMode		KEYWORD2	
+getPosition		KEYWORD2
+setPosition		KEYWORD2
+  
+TONE_SINE	   	LITERAL1
+TONE_TRIANGLE  	LITERAL1
+TONE_SQUARE		LITERAL1
+TONE_DIVIDE		LITERAL1
+
+
