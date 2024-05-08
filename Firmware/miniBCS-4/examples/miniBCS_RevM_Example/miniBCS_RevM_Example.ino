@@ -1,6 +1,5 @@
 // ==============================================
-//  This is an example sketch for the miniBCS with Teensy 3.5
-//   REV G Board
+//  This is an example sketch for the miniBCS with Teensy 4.1 rev M Board
 //  TFT Display, changes in Teensy pinouts used for display and I/O
 //
 //  Simple interface that:
@@ -11,11 +10,11 @@
 //        - test solenoid outputs
 //        - send out tone
 //  
-//  2019 HHMI Janelia Steve Sawtelle
+//  2024 HHMI Janelia Steve Sawtelle
 //
 // ===============================================
 // NON STANDARD LIBRARIES REQUIRED:
-//     miniBCSrevG
+//     miniBCS-4
 //     ILI9341_t3
 //     XPT2046_Touchscreen
 //     Cmd   
@@ -261,20 +260,7 @@ uint16_t dacval = 0;
 void setup()
 {  
     bcs.begin();   // set up miniBCS hardwware 
-  // set up command port and list 
-    Serial.begin(115200);       // USB serial startup
-    while(!Serial); 
-
-    Serial.print("miniBCS REVI maxIO - V:");
-    Serial.println(VERSION);  
-
-    Serial.print(TFTCSpin);
-    Serial.print(" ");
-    Serial.print(TFTRSTpin);
-    Serial.print(" ");
-    Serial.println(TFTDCpin);    
-
-    maxIO.begin();
+    maxIO.begin();  // start up maxim interfcae
                           
 //    // basic display setups
     tft.begin();                      // start up display      
@@ -294,15 +280,26 @@ void setup()
 //    // Serial.println( ts.bufferSize());
 //    ts.setRotation(3);  
    
+  // set up command port and list 
+    Serial.begin(115200);       // USB serial startup
+    while(!Serial);             // wait for serial port connection 
 
+    Serial.print("miniBCS REVI maxIO - V:");
+    Serial.println(VERSION);  
+
+    Serial.print(TFTCSpin);
+    Serial.print(" ");
+    Serial.print(TFTRSTpin);
+    Serial.print(" ");
+    Serial.println(TFTDCpin);    
 
     // --- experiment setups:
-//    bcs.toneReset();   // clear out any previous setups
-//    bcs.toneOff();         // be sure we start with tone off
-//    
-//    bcs.setTone(1000, TONE_SINE);
-//    bcs.setToneGain(250);
-//    bcs.toneOn();
+    bcs.toneReset();   // clear out any previous setups
+    bcs.toneOff();         // be sure we start with tone off
+    
+    bcs.setTone(1000, TONE_SINE);
+    bcs.setToneGain(250);
+    bcs.toneOn();
 
     // The cmd.h library is used to set up and parse commands and parameters
     cmdInit(&Serial);        // set up for command parsing
@@ -313,9 +310,6 @@ void setup()
     cmdAdd("TONE", toneCmd);
     cmdAdd("TMP", tmpCmd);
     cmdAdd("???", cmdHelp);
-
-    
-  
 
     maxIO.digitalRange(0, 4.0);
     maxIO.digitalRange(1, 8.0);
@@ -330,22 +324,7 @@ void setup()
     Serial.print( maxIO.readInternalTemp() ); 
    Serial.print(" maxid: ");
    Serial.println( maxIO.getID(), HEX );  
-   
-   while(1)
-   {
-   maxIO.digitalWrite(0, HIGH);
-   maxIO.digitalWrite(1, LOW); 
-   Serial.println(dacval, HEX);  
-   maxIO.analogWrite(2, dacval);
-   dacval += 128;
-   if( dacval > 4095 ) dacval = 0;
-   delay(2000); 
-   maxIO.digitalWrite(0, LOW);
-   maxIO.digitalWrite(1, HIGH);
-   delay(2000);
-   }
-
-
+  
 }
 
 int32_t pos = 0; 
