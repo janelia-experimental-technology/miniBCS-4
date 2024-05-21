@@ -173,7 +173,7 @@ void stopCmd(int arg_cnt, char **args)
     pulseTimer.end();   
     digitalWrite(pulsePin, LOW);  // turn off pulse
     TTLstate = false;
-//    bcs.toneOff();
+    bcs.toneOff();
 }
 
 // ==========================================
@@ -191,9 +191,9 @@ int ch;
        ch = cmdStr2Num(args[1], 10);
        Serial.print( "SOL CH:");
        Serial.println(ch);
-//       bcs.driverOn(ch);
+       bcs.driverOn(ch);
        delay(1000);
-//       bcs.driverOff(ch);
+       bcs.driverOff(ch);
   }
 }
 
@@ -209,9 +209,9 @@ void toneCmd(int arg_cnt, char **args)
      freq = cmdStr2Float(args[1]);    // frequency
      level = cmdStr2Num(args[2], 10);    // level
 
- //    bcs.setTone(freq, TONE_SINE);        // set up tone frequency and waveform 
-//     bcs.setToneGain(level);    // tone gain is 0 to 255
-///     bcs.toneOn();
+     bcs.setTone(freq, TONE_SINE);        // set up tone frequency and waveform 
+     bcs.setToneGain(level);    // tone gain is 0 to 255
+     bcs.toneOn();
 
      #ifdef DEBUG
         Serial.print("5 seconds: freq:");
@@ -221,7 +221,7 @@ void toneCmd(int arg_cnt, char **args)
      #endif   
 
      delay(5000);
-//     bcs.toneOff();
+     bcs.toneOff();
      #ifdef DEBUG
          Serial.println("off");   
      #endif       
@@ -298,7 +298,7 @@ void setup()
     bcs.toneOff();         // be sure we start with tone off
     
     bcs.setTone(1000, TONE_SINE);
-    bcs.setToneGain(250);
+    bcs.setToneGain(150);
     bcs.toneOn();
 
     // The cmd.h library is used to set up and parse commands and parameters

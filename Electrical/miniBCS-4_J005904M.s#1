@@ -35249,7 +35249,7 @@ T_IRQ 2  Optional: can use any digital pin
 <label x="162.56" y="198.12" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="DRV0" class="0">
+<net name="N$30" class="0">
 <segment>
 <pinref part="U5" gate="G$1" pin="OUT0B"/>
 <wire x1="162.56" y1="264.16" x2="182.88" y2="264.16" width="0.1524" layer="91"/>
@@ -35262,10 +35262,9 @@ T_IRQ 2  Optional: can use any digital pin
 <wire x1="200.66" y1="269.24" x2="200.66" y2="274.32" width="0.1524" layer="91"/>
 <wire x1="200.66" y1="274.32" x2="182.88" y2="274.32" width="0.1524" layer="91"/>
 <wire x1="182.88" y1="274.32" x2="182.88" y2="264.16" width="0.1524" layer="91"/>
-<label x="172.72" y="264.16" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="DRV1" class="0">
+<net name="N$32" class="0">
 <segment>
 <pinref part="U5" gate="G$1" pin="OUT1B"/>
 <wire x1="162.56" y1="259.08" x2="182.88" y2="259.08" width="0.1524" layer="91"/>
@@ -35279,10 +35278,9 @@ T_IRQ 2  Optional: can use any digital pin
 <wire x1="208.28" y1="233.68" x2="200.66" y2="233.68" width="0.1524" layer="91"/>
 <wire x1="200.66" y1="233.68" x2="200.66" y2="254" width="0.1524" layer="91"/>
 <wire x1="200.66" y1="254" x2="182.88" y2="254" width="0.1524" layer="91"/>
-<label x="172.72" y="259.08" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="DRV2" class="0">
+<net name="N$40" class="0">
 <segment>
 <pinref part="U5" gate="G$1" pin="OUT2B"/>
 <wire x1="162.56" y1="254" x2="170.18" y2="254" width="0.1524" layer="91"/>
@@ -35297,7 +35295,6 @@ T_IRQ 2  Optional: can use any digital pin
 <wire x1="205.74" y1="213.36" x2="198.12" y2="213.36" width="0.1524" layer="91"/>
 <wire x1="198.12" y1="213.36" x2="198.12" y2="231.14" width="0.1524" layer="91"/>
 <wire x1="198.12" y1="231.14" x2="182.88" y2="231.14" width="0.1524" layer="91"/>
-<label x="175.26" y="251.46" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SOL1" class="0">
@@ -35742,7 +35739,7 @@ T_IRQ 2  Optional: can use any digital pin
 <pinref part="M2" gate="G$1" pin="29"/>
 </segment>
 </net>
-<net name="DRV4" class="0">
+<net name="N$10" class="0">
 <segment>
 <pinref part="U5" gate="G$1" pin="OUT4B"/>
 <wire x1="162.56" y1="243.84" x2="165.1" y2="243.84" width="0.1524" layer="91"/>
@@ -35754,10 +35751,9 @@ T_IRQ 2  Optional: can use any digital pin
 <wire x1="205.74" y1="274.32" x2="203.2" y2="274.32" width="0.1524" layer="91"/>
 <wire x1="203.2" y1="274.32" x2="203.2" y2="243.84" width="0.1524" layer="91"/>
 <wire x1="203.2" y1="243.84" x2="165.1" y2="243.84" width="0.1524" layer="91"/>
-<label x="170.18" y="243.84" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="DRV5" class="0">
+<net name="N$14" class="0">
 <segment>
 <pinref part="U5" gate="G$1" pin="OUT5B"/>
 <wire x1="162.56" y1="238.76" x2="165.1" y2="238.76" width="0.1524" layer="91"/>
@@ -35771,10 +35767,9 @@ T_IRQ 2  Optional: can use any digital pin
 <wire x1="203.2" y1="241.3" x2="180.34" y2="241.3" width="0.1524" layer="91"/>
 <wire x1="180.34" y1="241.3" x2="180.34" y2="238.76" width="0.1524" layer="91"/>
 <wire x1="180.34" y1="238.76" x2="165.1" y2="238.76" width="0.1524" layer="91"/>
-<label x="170.18" y="238.76" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="DRV3" class="0">
+<net name="N$17" class="0">
 <segment>
 <pinref part="J8" gate="G$1" pin="P$3"/>
 <wire x1="203.2" y1="190.5" x2="208.28" y2="190.5" width="0.1524" layer="91"/>
@@ -35787,10 +35782,9 @@ T_IRQ 2  Optional: can use any digital pin
 <wire x1="177.8" y1="246.38" x2="177.8" y2="208.28" width="0.1524" layer="91"/>
 <junction x="177.8" y="246.38"/>
 <wire x1="203.2" y1="208.28" x2="177.8" y2="208.28" width="0.1524" layer="91"/>
-<label x="167.64" y="248.92" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="DRV7" class="0">
+<net name="N$18" class="0">
 <segment>
 <pinref part="U5" gate="G$1" pin="OUT7B"/>
 <pinref part="U5" gate="G$1" pin="OUT7A"/>
@@ -35802,7 +35796,6 @@ T_IRQ 2  Optional: can use any digital pin
 <wire x1="162.56" y1="228.6" x2="167.64" y2="228.6" width="0.1524" layer="91"/>
 <wire x1="167.64" y1="228.6" x2="167.64" y2="203.2" width="0.1524" layer="91"/>
 <junction x="162.56" y="228.6"/>
-<label x="172.72" y="203.2" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="GNDBB" class="0">
@@ -35854,10 +35847,9 @@ T_IRQ 2  Optional: can use any digital pin
 <junction x="200.66" y="193.04"/>
 <pinref part="J8" gate="G$1" pin="P$4"/>
 <label x="165.1" y="185.42" size="1.778" layer="95"/>
-<label x="170.18" y="205.74" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="DRV6" class="0">
+<net name="N$2" class="0">
 <segment>
 <pinref part="U5" gate="G$1" pin="OUT6A"/>
 <pinref part="U5" gate="G$1" pin="OUT6B"/>
@@ -35867,7 +35859,6 @@ T_IRQ 2  Optional: can use any digital pin
 <pinref part="J7" gate="G$1" pin="P$1"/>
 <wire x1="205.74" y1="218.44" x2="175.26" y2="218.44" width="0.1524" layer="91"/>
 <wire x1="175.26" y1="218.44" x2="175.26" y2="233.68" width="0.1524" layer="91"/>
-<label x="167.64" y="233.68" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SOL5" class="0">
