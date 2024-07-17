@@ -35,15 +35,6 @@
 #include <Cmd.h>
 #include <MAX11300.h>
 
-//
-//#define TS_CS 38                      // touchscreen chip select
-//#define TFT_DC  21                    // TFT data/command
-//#define TFT_CS 15                     // TFT chip select 
-//#define TFT_RST 37                    // TFT rseest pin
-// MOSI=11, MISO=12, SCK=13
-#define LED_PIN 36
-
-
 // --- pin and constant assignments:
 
 // assume Host serial interface is via USB
@@ -54,7 +45,7 @@
 #define MINON  100            // min/max pulse time in msec
 #define MAXON  5000
 
-volatile int8_t  pulsePin = LED_PIN;   // Teensy pin for pulse out 
+volatile int8_t  pulsePin = 34;   // Teensy pin for pulse out 
 volatile int32_t pulseDelay = 0;
 volatile int32_t pulseTime = 100000;
 volatile boolean runFlag = false;

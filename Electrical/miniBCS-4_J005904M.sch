@@ -35997,21 +35997,26 @@ T_IRQ 2  Optional: can use any digital pin
 <segment>
 <pinref part="J11" gate="J1" pin="4"/>
 <wire x1="-177.8" y1="243.84" x2="-162.56" y2="243.84" width="0.1524" layer="91"/>
-<wire x1="-162.56" y1="243.84" x2="-33.02" y2="243.84" width="0.1524" layer="91"/>
+<wire x1="-162.56" y1="243.84" x2="-40.64" y2="243.84" width="0.1524" layer="91"/>
 <pinref part="R2" gate="G$1" pin="2"/>
 <junction x="-162.56" y="243.84"/>
 <pinref part="ERST" gate="G$1" pin="3"/>
 <wire x1="-38.1" y1="271.78" x2="-40.64" y2="271.78" width="0.1524" layer="91"/>
 <pinref part="ERST" gate="G$1" pin="2"/>
-<wire x1="-33.02" y1="266.7" x2="-33.02" y2="261.62" width="0.1524" layer="91"/>
-<wire x1="-33.02" y1="261.62" x2="-40.64" y2="261.62" width="0.1524" layer="91"/>
-<wire x1="-40.64" y1="261.62" x2="-40.64" y2="271.78" width="0.1524" layer="91"/>
-<junction x="-40.64" y="271.78"/>
+<wire x1="-33.02" y1="266.7" x2="-33.02" y2="264.16" width="0.1524" layer="91"/>
+<wire x1="-33.02" y1="264.16" x2="-40.64" y2="264.16" width="0.1524" layer="91"/>
+<wire x1="-40.64" y1="264.16" x2="-40.64" y2="271.78" width="0.1524" layer="91"/>
 <pinref part="U11" gate="G$1" pin="!MR"/>
-<wire x1="-45.72" y1="271.78" x2="-40.64" y2="271.78" width="0.1524" layer="91"/>
+<wire x1="-45.72" y1="271.78" x2="-43.18" y2="271.78" width="0.1524" layer="91"/>
 <label x="-63.5" y="243.84" size="1.778" layer="95"/>
-<wire x1="-33.02" y1="243.84" x2="-33.02" y2="261.62" width="0.1524" layer="91"/>
-<junction x="-33.02" y="261.62"/>
+<junction x="-33.02" y="264.16"/>
+<label x="-157.48" y="243.84" size="1.778" layer="95"/>
+<label x="-48.26" y="274.32" size="1.778" layer="95"/>
+<wire x1="-33.02" y1="261.62" x2="-33.02" y2="264.16" width="0.1524" layer="91"/>
+<wire x1="-43.18" y1="271.78" x2="-43.18" y2="261.62" width="0.1524" layer="91"/>
+<wire x1="-43.18" y1="261.62" x2="-33.02" y2="261.62" width="0.1524" layer="91"/>
+<wire x1="-40.64" y1="264.16" x2="-40.64" y2="243.84" width="0.1524" layer="91"/>
+<junction x="-40.64" y="264.16"/>
 </segment>
 <segment>
 <wire x1="25.4" y1="223.52" x2="5.08" y2="223.52" width="0.1524" layer="91"/>
@@ -36039,6 +36044,7 @@ T_IRQ 2  Optional: can use any digital pin
 <pinref part="R3" gate="G$1" pin="2"/>
 <wire x1="-170.18" y1="246.38" x2="-170.18" y2="241.3" width="0.1524" layer="91"/>
 <junction x="-170.18" y="241.3"/>
+<label x="-157.48" y="241.3" size="1.778" layer="95"/>
 </segment>
 <segment>
 <wire x1="25.4" y1="220.98" x2="5.08" y2="220.98" width="0.1524" layer="91"/>
