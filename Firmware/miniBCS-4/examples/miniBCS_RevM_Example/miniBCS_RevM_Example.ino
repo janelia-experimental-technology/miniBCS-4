@@ -261,19 +261,19 @@ void setup()
     tft.setTextSize(2);       
     tft.println("      miniBCS w/ maxIO");
     tft.println("    with TFT touchscreen");    
-    tft.println("    demo for REV I Board"); 
+    tft.println("    demo for REV M Board"); 
     tft.print  ("      VERSION:");   
     tft.println(VERSION);
     tft.println( maxIO.getID());
     
 //    // touchscreen 
-//    ts.begin();
+    ts.begin();
 //    // Serial.println( ts.bufferSize());
-//    ts.setRotation(3);  
+    ts.setRotation(3);  
    
   // set up command port and list 
     Serial.begin(115200);       // USB serial startup
-    while(!Serial);             // wait for serial port connection 
+    //while(!Serial);             // wait for serial port connection 
 
     Serial.print("miniBCS REVI maxIO - V:");
     Serial.println(VERSION);  
@@ -330,7 +330,7 @@ boolean wastouched = true;
 void loop()
 {
 
- 
+  tft.println("      miniBCS w/ maxIO");
   cmdPoll();   // look for commands
 
 
