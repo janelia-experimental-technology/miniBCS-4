@@ -334,8 +334,8 @@ void loop()
   cmdPoll();   // look for commands
 
 
-//  Serial.println( maxIO.readInternalTemp() );
-//  delay(500);
+  Serial.println( maxIO.readInternalTemp() );
+  delay(500);
 
     
   
