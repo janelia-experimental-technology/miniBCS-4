@@ -28,10 +28,13 @@
 //   - needed to fix order and setup of chip selects
 
 #include <miniBCS-4.h>              // miniBSC functions
-//#include <XPT2046_Touchscreen.h>      // Touchscreen functions
-#include <ILI9341_T4.h>               // TFT Display functions
+#include <XPT2046_Touchscreen.h>      // Touchscreen functions
+//#include <ILI9341_T4.h>               // TFT Display functions
+
 //#include <font_Arial.h>               // from ILI9341_t3     
 #include <SPI.h>                      // SPI needed for TFT display
+#include "Adafruit_GFX.h"
+#include "Adafruit_ILI9341.h"
 #include <Cmd.h>
 #include <MAX11300.h>
 
@@ -63,8 +66,9 @@ miniBCS bcs;  // instantiate a miniBCS object
 
 
 //ILI9341_T4 tft = ILI9341_t4(TFTCSpin, TFTDCpin, SCLKpin, MOSIpin, MISOpin, TFTRSTpin, TSCSpin, 255);    // instantiate TFT display
-ILI9341_T4::ILI9341Driver tft(TFTCSpin, TFTDCpin, SCLKpin, MOSIpin, MISOpin, TFTRSTpin, TSCSpin, 255); 
-//XPT2046_Touchscreen ts(TSCSpin);        // set chip select for touchscreen
+//ILI9341_T4::ILI9341Driver tft(TFTCSpin, TFTDCpin, SCLKpin, MOSIpin, MISOpin, TFTRSTpin, TSCSpin, 255); 
+Adafruit_ILI9341 tft = Adafruit_ILI9341(TFTCSpin, TFTDCpin, TFTRSTpin);
+XPT2046_Touchscreen ts(TSCSpin);        // set chip select for touchscreen
 // Touchscreen alternate setups
 //#define TIRQ_PIN  32
 //XPT2046_Touchscreen ts(CS_PIN);  // Param 2 - NULL - No interrupts
@@ -254,24 +258,13 @@ void setup()
 
      Serial.begin(115200);       // USB serial startup
      while(!Serial);             // wait for serial port connection 
-
-pinMode(9, OUTPUT);
-digitalWrite(9, HIGH);   
      
-     bcs.begin();   // set up miniBCS hardware 
-
-   
-digitalWrite(9, LOW);  
-      
-     maxIO.begin();  // start up maxim interface
-    
-digitalWrite(9, HIGH);
-                          
     // basic display setups
-    tft.begin();                      // start up display    
+    tft.begin();                      // start up display 
 
-digitalWrite(9, LOW); 
-          
+    bcs.begin();   // set up miniBCS hardware     
+    maxIO.begin();  // start up maxim interface       
+  
     tft.setRotation(1);         // rotate 180 for miniBCS mechanical attachment 
     tft.fillScreen(ILI9341_BLACK);          
     tft.setTextColor(ILI9341_YELLOW);    
@@ -281,16 +274,12 @@ digitalWrite(9, LOW);
     tft.println("    demo for REV M Board"); 
     tft.print  ("      VERSION:");   
     tft.println(VERSION);
-    tft.println( maxIO.getID());
-
-//digitalWrite(9, LOW);    
-
+//    tft.println( maxIO.getID());     
+              
 //    // touchscreen 
     ts.begin();
 //    // Serial.println( ts.bufferSize());
     ts.setRotation(3);  
-
-digitalWrite(9, HIGH);
    
     Serial.print("miniBCS REVM maxIO - V:");
     Serial.println(VERSION); 
@@ -301,9 +290,7 @@ digitalWrite(9, HIGH);
     Serial.print(TFTRSTpin);
     Serial.print(" ");
     Serial.println(TFTDCpin);    
-
-digitalWrite(9, LOW);
-
+    
     // --- experiment setups:
     bcs.toneReset();   // clear out any previous setups
     bcs.toneOff();         // be sure we start with tone off
@@ -324,8 +311,6 @@ digitalWrite(9, LOW);
     cmdAdd("TMP", tmpCmd);
     cmdAdd("???", cmdHelp);
 
-         digitalWrite(9, LOW);
-
     maxIO.digitalRange(0, 4.0);
     maxIO.digitalRange(1, 8.0);
     if(maxIO.pinMode( 0, digitalOut) == false) Serial.println("bad 0");
@@ -336,8 +321,6 @@ digitalWrite(9, LOW);
     maxIO.digitalWrite(1, HIGH);
     maxIO.pinMode( 2, analogOut);
     maxIO.DACrange( 2, DACZeroTo10);
-
-     digitalWrite(9, HIGH);
     
     Serial.print( maxIO.readInternalTemp() ); 
     Serial.print(" maxid: ");
@@ -356,15 +339,9 @@ boolean wastouched = true;
 //  ==========================
 void loop()
 {
-
-  tft.println("      miniBCS w/ maxIO");
   cmdPoll();   // look for commands
-
 
   Serial.println( maxIO.readInternalTemp() );
   delay(500);
-
-    
-  
 
 }
