@@ -257,7 +257,7 @@ void setup()
 {  
 
      Serial.begin(115200);       // USB serial startup
-     while(!Serial);             // wait for serial port connection 
+//     while(!Serial);             // wait for serial port connection 
      
     // basic display setups
     tft.begin();                      // start up display 
