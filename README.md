@@ -1,6 +1,9 @@
 # miniBSC-4
  Configurable I/O PCB for Teensy 4.1 and Max11300
  
+ https://doi.org/10.25378/janelia.29669162
+ 
+ 
  System Overview
 
 The miniBCS is a compact, general-purpose Behavioral Control System (BCS). It provides a powerful platform to control real-time experiments. It is highly adaptable in terms of types of outputs and connectors. It is also designed to be easy to use, self-documenting, inexpensive, and easy to customize.
